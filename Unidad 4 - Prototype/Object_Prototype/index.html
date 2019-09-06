@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+
+    <div class="button">
+      <button id="btnAlert" type="button" name="Alert">Alertar </button>
+    </div>
+
+    <script src="prototype.js"></script>
+    <script type="text/javascript">
+      var alertaClick = Class.create({
+        initialize: function(mensaje){
+        this.rsj = mensaje
+      },
+      capturarClick: function(event){
+        event.stop()
+        console.log(this);
+        alert(this.rsj)
+      }
+      })
+
+      var miAlerta = new alertaClick("Hiciste click en el boton");
+      $('btnAlert').observe('click',miAlerta.capturarClick.bind(miAlerta))
+    </script>
+    <script type="text/javascript">
+     function evalParam(elementid,typeSelector,tiempoEspera)
+     {}
+     var functionParams = evalParam.argumentNames()
+     console.log(functionParams)
+    </script>
+    <script type="text/javascript">
+      function mostrarAlerta(mensaje){
+        alert(mensaje)
+      }
+      mostrarAlerta('uno')
+      mostrarAlerta.defer('dos')
+      mostrarAlerta('tres')
+      mostrarAlerta.delay(5, 'Espera 5 segundos')
+    </script>
+    <script type="text/javascript">
+      var vArray = ['luis','jorge','carlos']
+      //  var vArray = 8
+      var tipo = Object.isArray(vArray)
+      console.log(tipo);
+
+      var element = document.createElement ('h1')
+      var tipo = Object.isElement(element);
+      console.log('Elemento h1 ' +tipo);
+
+      var divelement = '<div></div>'
+      var divtipo = Object.isElement(divelement);
+      console.log('Elemento div ' +divtipo);
+    </script>
+    <script type="text/javascript">
+      var string = 'hello-world'
+      var stringcamel = string.camelize()
+      console.log(stringcamel);
+
+      var string = 'hello world'
+      var stringCap = string.capitalize()
+      console.log(stringCap);
+
+      var string = 'hello-world'
+      var stringEmpty = string.empty()
+      console.log(stringEmpty);
+
+      var string = 'hello-world-Luis'
+      var stringInclude = string.include("Luis");
+      console.log(stringInclude);
+
+    </script>
+  </body>
+</html>
